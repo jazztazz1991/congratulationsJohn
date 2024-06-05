@@ -1,53 +1,51 @@
-
 .congrats-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
-    background-color: rgb(149, 99, 173);
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    background-image: url('./images/congratz2.png');
-    background-repeat:no-repeat;
-    /* color: purple; */
-    text-shadow: lightskyblue 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  background-color: rgb(149, 99, 173);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-image: url("./images/congratz2.png");
+  background-repeat: no-repeat;
+  /* color: purple; */
+  text-shadow: lightskyblue 0 0 30px;
 }
 
 .congrats-text {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-    text-align: center;
-    animation: confetti-fall 5s ease-in-out infinite alternate;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  animation: confetti-fall 5s ease-in-out infinite alternate;
 }
 span {
-    font-size: 10px;
+  font-size: 10px;
 }
-#left{
-    float: left;
+#left {
+  float: left;
 }
 #middle {
-    width:max-content;
-    
+  width: max-content;
 }
-#right{
-    float:right;
+#right {
+  float: right;
 }
 @keyframes confetti-fall {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(10px);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }
 
 .confetti-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
