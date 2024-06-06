@@ -23,9 +23,8 @@ function Miles() {
       <h2>Miles</h2>
 
       <h1 className='congrats-miles' onClick={handleCongratulationClick}>
-        Congratulations John!!!
+        {isExploding ? `BE WILD!` : `Congratulations John!!!!`}
       </h1>
-      {isExploding && <h1 className='wild'>BE WILD!</h1>}
       <div className='confetti-wrapper'></div>
     </div>
   );
