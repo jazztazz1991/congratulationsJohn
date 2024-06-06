@@ -1,4 +1,21 @@
-div{
-    height: 250px;
-    width: 100%;
+div {
+  height: 250px;
+  width: 100%;
+}
+.mary-content {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  line-height: 1.5;
+  background-color: black;
+}
+.quote {
+  margin-left: 1%;
+  align-self: flex-start;
+  font-style: italic;
+}
+.sig {
+  margin-right: 5%;
+  align-self: flex-end;
 }
