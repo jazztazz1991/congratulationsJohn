@@ -1,4 +1,95 @@
-div{
-    height: 250px;
-    width: 100%;
+.coins-container {
+  position: relative;
+  width: 150%;
+  height: 100%; /* Adjust height as needed for your coins image */
+}
+
+.coin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmNmMjFyOGY0djhmNjJpOXFjY25jZ3o1OWVqc3g0MW1obzRteHVnbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/raJa0mPRFe8zC/giphy.webp");
+  background-size: cover;
+  border-radius: 50%;
+  animation: shoot 1s ease-out forwards;
+}
+
+.gold-coins {
+  animation: coin-rain 5s linear infinite;
+  position: absolute; /* Position the image absolutely */
+  top: -80%; /* Align top edge of image to top of container */
+  left: -10%; /* Align left edge of image to left of container */
+  width: 100%; /* Stretch image to cover container width */
+  height: 100%; /* Stretch image to cover container height (adjust as needed) */
+  z-index: -1; /* Set image to a lower z-index so text appears on top */
+}
+
+.coin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmNmMjFyOGY0djhmNjJpOXFjY25jZ3o1OWVqc3g0MW1obzRteHVnbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/raJa0mPRFe8zC/giphy.webp");
+  background-size: cover;
+  animation: shoot 1s ease-out forwards;
+}
+
+@keyframes bounceText {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  } /* Bounce upwards */
+  100% {
+    transform: translateY(0);
+  } /* Return to original position */
+}
+.wedding-congrats {
+  display: flex;
+  background-image: url("https://steemitimages.com/0x0/http://www.azerothmillionaire.com/uploads/8/9/8/0/89802689/gold-coins-falling_orig.gif");
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 250px;
+  max-height: 250px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  animation: move-up-down 2s ease-in-out infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@keyframes move-up-down {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+.wedding-congrats h1 {
+  animation: bounceText 1s ease-in-out infinite alternate; /* Animation properties */
+}
+
+.large-text {
+  font-size: 3em; /* Adjust as needed */
+}
+
+.wedding-congrats p {
+  animation: bounceText 1.2s ease-in-out infinite alternate; /* Customize timings for variation */
+}
+
+.wedding-congrats p.Keegan {
+  float: right;
+}
+.keegan-text {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 5%;
+}
+.first-el {
+  margin-top: 3%;
 }
