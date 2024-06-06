@@ -2,24 +2,11 @@
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:500);
 
-:root {
-    /* Base font size */
-    font-size: 10px;
-
-    /* Border color variable */
-    --border-color: #e70;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
+.lora {
     font-family: "Montserrat", Arial, sans-serif;
     font-weight: 500;
     line-height: 1.5;
     text-align: center;
-    min-height: 100vh;
     padding: 4rem 2rem;
     color: #fafafa;
     background-color: #080808;

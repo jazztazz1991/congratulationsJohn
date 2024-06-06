@@ -13,7 +13,7 @@ function Lora() {
 		cube3D.classList.toggle('show-6');
 	};
 	return (
-		<div className='cube-container' onClick={handleClick}>
+		<div className='cube-container lora' onClick={handleClick}>
 			<div className='cube initial-position'>
 				<img
 					className='cubeFaceImage1'
