@@ -1,4 +1,95 @@
-div{
-    height: 250px;
-    width: 100%;
+.micah-div {
+  height: 10px;
+  width: 10%;
+}
+.balloon {
+  position: fixed;
+  width: 50px;
+  height: 100px;
+  cursor: pointer;
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.popup {
+  position: fixed;
+  width: 500px;
+  height: 250px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  border: 5px solid #55208b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: sparkle 1s infinite alternate, explode 0.5s ease-out,
+    colorWave 5s infinite, pulseBorder 2s infinite;
+}
+@keyframes explode {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes sparkle {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+}
+@keyframes colorWave {
+  0% {
+    background-color: #ff0000;
+  }
+  16% {
+    background-color: #ff8000;
+  }
+  33% {
+    background-color: #ffff00;
+  }
+  50% {
+    background-color: #00ff00;
+  }
+  66% {
+    background-color: #00ffff;
+  }
+  83% {
+    background-color: #0000ff;
+  }
+  100% {
+    background-color: #ff00ff;
+  }
+}
+@keyframes pulseBorder {
+  0% {
+    border-color: #55208b;
+  }
+  50% {
+    border-color: #aa40ff;
+  }
+  100% {
+    border-color: #55208b;
+  }
+}
+.svg {
+  width: 200px;
 }
