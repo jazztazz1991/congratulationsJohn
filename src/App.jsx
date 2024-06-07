@@ -1,4 +1,3 @@
-
 import './App.css';
 import Header from './components/header';
 
@@ -6,6 +5,7 @@ import Alberto from './students/alberto/alberto';
 import Anthony from './students/anthony/anthony';
 import Bree from './students/bree/bree';
 import Carlos from './students/carlos/carlos';
+import Charles from './students/charles/charles';
 import Christian from './students/christian/christian';
 import Daniel from './students/daniel/daniel';
 import Dylan from './students/dylan/dylan';
@@ -34,6 +34,7 @@ function App() {
 			<Anthony />
 			<Bree />
 			<Carlos />
+			<Charles />
 			<Christian />
 			<Daniel />
 			<Dylan />
