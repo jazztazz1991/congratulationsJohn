@@ -89,13 +89,18 @@ const Ryan = () => {
 		<div
 			ref={containerRef}
 			style={{
-				width: '100%',
-				height: '250px',
+				width: 'auto',
+				height: '150px',
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
 			}}
+			className='justify-center align-center flex flex-column'
 		>
+			{/* <div className='mx-auto'>
+				<h2>Congratulations John & Angel!</h2>
+				<p>Ryan</p>
+			</div> */}
 			<canvas ref={canvasRef} />
 		</div>
 	);
