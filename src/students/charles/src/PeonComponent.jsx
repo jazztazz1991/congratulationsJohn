@@ -1,5 +1,5 @@
 
-import './App.css'
+
 import Canvas from './components/Canvas.jsx'
 import Peon from './peon.js'
 import '../src/css/video.css'
