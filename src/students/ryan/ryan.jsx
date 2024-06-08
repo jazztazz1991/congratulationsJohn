@@ -34,41 +34,35 @@ const Ryan = () => {
 
 		const text = 'Congratulations John';
 		const loader = new FontLoader();
-		loader.load(
-			'https://threejs.org/examples/fonts/gentilis_regular.typeface.json',
-			(font) => {
-				const geometry = new THREE.TextGeometry(text, {
-					font: font,
-					size: 1,
-					height: 0.2,
-				});
-				const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-				const sprite = new THREE.Mesh(geometry, material);
-				sprite.position.x = -6;
-				sprite.position.y = 2;
-				sprite.position.z = -1;
-				scene.add(sprite);
-			}
-		);
+		loader.load('./gentilis_regular.typeface.json', (font) => {
+			const geometry = new THREE.TextGeometry(text, {
+				font: font,
+				size: 1,
+				height: 0.2,
+			});
+			const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+			const sprite = new THREE.Mesh(geometry, material);
+			sprite.position.x = -6;
+			sprite.position.y = 2;
+			sprite.position.z = -1;
+			scene.add(sprite);
+		});
 
 		const ryanText = '~Ryan';
 		const ryanLoader = new FontLoader();
-		loader.load(
-			'https://threejs.org/examples/fonts/gentilis_regular.typeface.json',
-			(font) => {
-				const ryanGeometry = new THREE.TextGeometry(ryanText, {
-					font: font,
-					size: 1,
-					height: 0.2,
-				});
-				const ryanMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-				const ryanSprite = new THREE.Mesh(ryanGeometry, ryanMaterial);
-				ryanSprite.position.x = -2;
-				ryanSprite.position.y = -3;
-				ryanSprite.position.z = -1;
-				scene.add(ryanSprite);
-			}
-		);
+		ryanLoader.load('./fonts/gentilis_regular.typeface.json', (font) => {
+			const ryanGeometry = new THREE.TextGeometry(ryanText, {
+				font: font,
+				size: 1,
+				height: 0.2,
+			});
+			const ryanMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+			const ryanSprite = new THREE.Mesh(ryanGeometry, ryanMaterial);
+			ryanSprite.position.x = -2;
+			ryanSprite.position.y = -3;
+			ryanSprite.position.z = -1;
+			scene.add(ryanSprite);
+		});
 
 		camera.position.z = 4;
 		renderer.setSize(canvas.width, canvas.height);
