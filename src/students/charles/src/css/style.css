@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#canvas {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+#WC3UI {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+
