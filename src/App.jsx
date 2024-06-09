@@ -3,6 +3,7 @@ import Header from './components/header';
 
 import Alberto from './students/alberto/alberto';
 import Anthony from './students/anthony/anthony';
+import Brandon from './students/brandon/brandon';
 import Bree from './students/bree/bree';
 import Carlos from './students/carlos/carlos';
 import Charles from './students/charles/charles';
@@ -32,6 +33,7 @@ function App() {
 			<Mary />
 			<Alberto />
 			<Anthony />
+			<Brandon />
 			<Bree />
 			<Carlos />
 			<Charles />

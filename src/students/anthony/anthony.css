@@ -1,4 +1,19 @@
-div{
+.anthMain{
     height: 250px;
     width: 100%;
+    background-color: #feb818;
+    color: #009481;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.anthText{
+    align-content: center;
+    justify-content: center;
+}
+.krusty{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
 }

@@ -1,0 +1,14 @@
+.brandon{
+    height: 250px;
+    width: 100%;
+    /* Centered radial gradient with light blue in the center fading to purple */
+    background: radial-gradient(circle at center, lightblue 0%, purple 75%);
+    border-radius: 25px;
+    margin: 5px 0px;
+    justify-content: center;
+    align-content: center;
+}
+
+.btext{
+    text-shadow: 0px 0px 5px black
+}
