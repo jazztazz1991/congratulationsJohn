@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+.image {
+  position: absolute; /* Positions the image relative to the nearest positioned ancestor */
+  top: 0; /* Positions the image at the top of the container */
+  left: 50%; /* Positions the left edge of the image at the center of the container */
+  transform: translateX(-50%); /* Shifts the image to the left by half its width to truly center it */
+}
 #canvas {
   position: relative;
   top: 0;

@@ -1,8 +1,6 @@
 
 import peonanim from './peon-anim.js'
-const path = './src/assets/peon-john.png'
-import { Howl, Howler } from 'howler';
-
+const path = './src/students/charles/src/assets/peon-john.png'
 class Peon {
     constructor(context, debugMode) {
         this.img = new Image();
@@ -23,21 +21,23 @@ class Peon {
         this.destination;
         this.timer = 0;
         this.img.onload = () => {
+
             this.lastFrameTime = performance.now();
             this.animate();
         }
         this.jobsDone;
         this.yesAudio = [];
         this.img.src = path;
+
         console.count('Peons Created')
     }
 
     loadAudio = async () => {
         try {
 
-            const audiopath = `./src/assets/sounds/`;
+            const audiopath = `./src/students/charles/src/assets/sounds/`;
 
-            this.jobsDone = new Audio('./src/assets/sounds/WorkComplete.ogg');
+            this.jobsDone = new Audio(`${audiopath}WorkComplete.ogg`);
             this.jobsDone.addEventListener('ended', () => {
 
                 this.jobsDone.pause();
@@ -85,7 +85,7 @@ class Peon {
             }
             this.drawRect = { sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight };
 
-            this.speed = sWidth * 0.7 * this.animSpeed;
+            this.speed = sWidth * this.animSpeed;
 
             if (!this.reverseFrames) {
                 if (this.frame === this.currentFrames.length - 1) {
@@ -103,7 +103,7 @@ class Peon {
                 }
             }
 
-        console.log(`this.frame: ${this.frame}\nthis.reverseFrames: ${this.reverseFrames}`)
+            console.log(`this.frame: ${this.frame}\nthis.reverseFrames: ${this.reverseFrames}`)
             this.loaded = true;
             //move the peon\
             if (this.moving.x || this.moving.y) {
@@ -122,17 +122,21 @@ class Peon {
         if (this.loaded) {
             if (this.moving.x)
                 if (this.direction.x) {
-
+                    if(!this.moving.y) this.drawRect.dx -= this.speed/2
                     this.drawRect.dx -= this.speed;
                 }
-                else
+                else{
+                    if(!this.moving.y) this.drawRect.dx += this.speed/2
                     this.drawRect.dx += this.speed;
+                }
 
             if (this.moving.y)
-                if (this.direction.y)
-                    this.drawRect.dy -= this.speed;
-                else
-                    this.drawRect.dy += this.speed;
+                if (this.direction.y){
+                    if(!this.moving.x) this.drawRect.dy -= this.speed/2
+                    this.drawRect.dy -= this.speed;}
+                else{
+                    if(!this.moving.x) this.drawRect.dy += this.speed/2
+                    this.drawRect.dy += this.speed;}
 
         }
     }
@@ -211,6 +215,9 @@ class Peon {
         // clearTimeout(this.timer);
         //  }, 1000);
     }
+    getActive = () => {
+        return this.active;
+    }
 
     setActive = (boo) => {
         this.active = boo;
@@ -219,46 +226,53 @@ class Peon {
     setDebugMode = (boo) => {
         this.debugMode = boo;
     }
+
+
+    getDebugMode = () => {
+        return this.debugMode;
+    }
     checkClicked = (_x, _y) => {
-        //  this.active = true;
+      //  this.active = true;
         const rect = this.context.canvas.getBoundingClientRect();
         const x = _x - rect.left;
         const y = _y - rect.top;
         const { dx, dy, dWidth, dHeight } = this.drawRect;
         if (x > dx && x < (dx + dWidth) && y > dy && y < (dy + dHeight)) {
+            this.active = false;
             let idx = (Math.floor(Math.random() * this.audio.length - 1))
             this.audio[idx].play();
+            return false;
+        } else {
+
+            this.destination = { x: x, y: y };
+            if (x < dx) {
+                this.direction.x = true;
+                this.moving.x = true;
+            }
+            if (x > dx) {
+                this.direction.x = false;
+                this.moving.x = true;
+            }
+            if (y < dy) {
+                this.direction.y = true;
+                this.moving.y = true;
+            }
+            if (y > dy) {
+                this.direction.y = false;
+                this.moving.y = true;
+            }
+
+            if (this.moving.x && this.moving.y) {
+                if (this.direction.y && this.direction.x) this.currentFrames = peonanim.walkDiagonalUpLeft.frames;
+                else if (this.direction.y) { this.currentFrames = peonanim.walkDiagonalUpRight.frames; }
+                else if (this.direction.x) this.currentFrames = peonanim.walkDiagonalDownLeft.frames;
+                else { this.currentFrames = peonanim.walkDiagonalDownRight.frames; }
+            }
+            const idx = Math.floor(Math.random() * 3)
+            this.yesAudio[idx].play();
+
             return true;
         }
-
-        this.destination = { x: x, y: y };
-        if (x < dx) {
-            this.direction.x = true;
-            this.moving.x = true;
-        }
-        if (x > dx) {
-            this.direction.x = false;
-            this.moving.x = true;
-        }
-        if (y < dy) {
-            this.direction.y = true;
-            this.moving.y = true;
-        }
-        if (y > dy) {
-            this.direction.y = false;
-            this.moving.y = true;
-        }
-
-        if (this.moving.x && this.moving.y) {
-            if (this.direction.y && this.direction.x) this.currentFrames = peonanim.walkDiagonalUpLeft.frames;
-            else if (this.direction.y) { this.currentFrames = peonanim.walkDiagonalUpRight.frames; }
-            else if (this.direction.x) this.currentFrames = peonanim.walkDiagonalDownLeft.frames;
-            else { this.currentFrames = peonanim.walkDiagonalDownRight.frames; }
-        }
-        const idx = Math.floor(Math.random() * 3)
-        this.yesAudio[idx].play();
-        // this.yesAudio[idx].load();
-        return false;
     }
 
     draw = () => {
