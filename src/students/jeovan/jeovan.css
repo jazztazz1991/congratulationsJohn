@@ -2,6 +2,8 @@
 div {
   height: 250px;
   width: 100%;
+  clear: both;
+  margin-top: 5px;
 }
 
 /* Styling the jeovan-box with a background image */

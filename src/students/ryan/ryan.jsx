@@ -84,17 +84,17 @@ const Ryan = () => {
 			ref={containerRef}
 			style={{
 				width: 'auto',
-				height: '150px',
+				height: '250px',
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
 			}}
 			className='justify-center align-center flex flex-column'
 		>
-			{/* <div className='mx-auto'>
+			<div className='mx-auto'>
 				<h2>Congratulations John & Angel!</h2>
 				<p>Ryan</p>
-			</div> */}
+			</div>
 			<canvas ref={canvasRef} />
 		</div>
 	);

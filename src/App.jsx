@@ -30,19 +30,13 @@ function App() {
 		<>
 			<Header />
 			<Cody />
-			<Mary />
-			<Alberto />
 			<Anthony />
 			<Brandon />
 			<Bree />
-			<Carlos />
 			<Charles />
 			<Christian />
 			<Daniel />
 			<Dylan />
-			<Ella />
-			<Emanuel />
-			<Ian />
 			<Jeovan />
 			<Keegan />
 			<Lora />
