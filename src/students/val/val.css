@@ -1,4 +1,18 @@
-div{
-    height: 250px;
-    width: 100%;
+.val-content {
+  height: 250px;
+  width: 100%;
+  background-color: rgb(0, 208, 98);
+  color: rgb(255, 215, 0);
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  flex-direction: column;
+}
+
+.val-text {
+  position: relative;
+  width: 90%;
+  top: 45%;
+  display: flex;
+  flex-direction: column;
 }
